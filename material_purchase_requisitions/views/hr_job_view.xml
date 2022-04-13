@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="job_form_view" model="ir.ui.view">
+            <field name="name">hr.job.form.view</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr.view_hr_job_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/header" position="replace">
+                    <header>
+                        <button name="set_draft" string="Draft" type="object" class="oe_highlight"
+                                states="recruit,open" confirm="Are you sure?"/>
+                        <button name="set_recruit" string="Start Recruitment" states="open,draft" type="object"
+                                class="oe_highlight" groups="base.group_user"/>
+                        <button name="set_open" string="Stop Recruitment" states="recruit,draft" type="object"
+                                groups="base.group_user"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,recruit,open"/>
+                    </header>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
