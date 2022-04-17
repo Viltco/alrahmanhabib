@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_hr_recruitment_stage_form_inherited" model="ir.ui.view">
+        <field name="name">hr.recruitment.stage.inherited</field>
+        <field name="inherit_id" ref="hr_recruitment.hr_recruitment_stage_form"/>
+        <field name="model">hr.recruitment.stage</field>
+        <field name="priority">100</field>
+        <field type="xml" name="arch">
+             <xpath expr="//field[@name='template_id']" position="after">
+                <field name="button_show"/>
+            </xpath>
+        </field>
+    </record>
+
+
+
+
+</odoo>

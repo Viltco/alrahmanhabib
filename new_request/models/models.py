@@ -4,7 +4,7 @@ from odoo import api, fields, models
 class NewRequest(models.Model):
     _inherit = "hr.applicant"
 
-    button_show = fields.Boolean(default=False, compute='_compute_button_show', store=True)
+    button_sh = fields.Boolean(related='stage_id.button_show')
 
     def action_new_request(self):
         return {
@@ -12,11 +12,10 @@ class NewRequest(models.Model):
             'name': 'New Request',
             'res_model': 'approval.request',
             'view_mode': 'form',
-            # 'domain': domain,
+            'view_id': self.env.ref('approvals.approval_request_view_form').id,
         }
 
-    @api.depends('stage_id')
-    def _compute_button_show(self):
-        for rec in self:
-            if rec.stage_id.name == "Contract Proposal":
-                rec.button_show = True
+    # @api.depends('stage_id')
+    # def _compute_button_show(self):
+    #     for rec in self:
+    #             rec.button_show = True
