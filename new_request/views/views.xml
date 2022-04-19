@@ -7,19 +7,22 @@
         <field name="model">hr.applicant</field>
         <field name="priority">100</field>
         <field type="xml" name="arch">
-             <xpath expr="//header" position="inside">
-                <button id="button_new_request" name="action_new_request" string="New Contract  Request"
-                        class="btn-primary" type="object"   attrs="{'invisible': [('button_sh', '=', False)]}"
-
-                        />
+            <xpath expr="//header" position="inside">
+                <button id="button_new_request" name="action_new_request" string="New Contract Request"
+                        class="btn-primary" type="object" attrs="{'invisible': [('button_sh', '=', False)]}"/>
             </xpath>
             <xpath expr="//field[@name='source_id']" position="after">
-               <field name="button_sh" invisible="1"/>
+                <field name="button_sh" invisible="1"/>
             </xpath>
+
+             <xpath expr="//div[@class='oe_button_box']" position="inside">
+                    <button name="action_contract_approval" type="object"
+                            class="oe_stat_button" icon="fa-pencil-square-o">
+                        <field name="approval_request_count" widget="statinfo" string="New Request Approval"/>
+                    </button>
+                </xpath>
         </field>
     </record>
-
-
 
 
 </odoo>

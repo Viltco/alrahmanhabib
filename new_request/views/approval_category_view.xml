@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_approval_request_inherited" model="ir.ui.view">
+        <field name="name">aapproval.request.inherited</field>
+        <field name="inherit_id" ref="approvals.approval_request_view_form"/>
+        <field name="model">approval.request</field>
+        <field type="xml" name="arch">
+
+            <xpath expr="/form/sheet/notebook/page[@name='description']" position="inside">
+                <group>
+                    <field name="source"/>
+<!--                    <field name="hide_btn" invisible="1"/>-->
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

@@ -27,6 +27,7 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/boolean_field.xml',
+        'views/approval_category_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
