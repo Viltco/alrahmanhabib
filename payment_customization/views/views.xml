@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <record id="payment_inherited_id" model="ir.ui.view">
+            <field name="name">account.payment.form</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+<!--                <xpath expr="//field[@name='is_internal_transfer']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+                <!--                                <xpath expr="//field[@name='partner_type']" position="attributes">-->
+                <!--                                    <attribute name="invisible">1</attribute>-->
+                <!--                                </xpath>-->
+                <!--                <xpath expr="//field[@name='destination_account_id']" position="attributes">-->
+                <!--                    <attribute name="context">{'user_type_id':'liquidity'}</attribute>-->
+                <!--                </xpath>-->
+                <!--                                <xpath expr="//field[@name='destination_account_id']" position="replace">-->
+                <!--                                    <field name="destination_account_id"  domain="[('user_type_id', '=', 'liquidity')]"/>-->
+                <!--                                </xpath>-->
+
+                <xpath expr="//header" position="inside">
+                <button id="button_review" name="action_review" string="Review"
+                        class="btn-primary" type="object" states="confirm"/>
+                <button id="button_approve" name="action_approve" string="Approve"
+                        class="btn-primary" type="object" states="review"/>
+                <button id="button_print_approve" name="action_print_approve" string="Print Approve"
+                        class="btn-primary" type="object" states="approve"/>
+            </xpath>
+            <xpath expr="//header/field[@name='state']" position="replace">
+                <field name="state" widget="statusbar" statusbar_visible="draft,confirm,review,approve,posted"/>
+            </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
