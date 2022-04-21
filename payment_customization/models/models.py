@@ -46,3 +46,8 @@ class PaymentCustomization(models.Model):
         self.write({
             'state': 'posted'
         })
+
+    def action_draft(self):
+        self.write({
+            'state': 'draft'
+        })
