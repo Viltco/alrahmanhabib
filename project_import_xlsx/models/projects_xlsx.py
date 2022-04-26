@@ -47,10 +47,16 @@ class ProjectsXLSX(models.Model):
             #     'location_dest_id': location_dest_records.id,
             #     'quantity_done': i.get('Operations / Done'),
             # }))
-            start_seconds = (i.get('start_date') - 25569) * 86400.0
-            start_tin = datetime.utcfromtimestamp(start_seconds)
-            end_seconds = (i.get('start_date') - 25569) * 86400.0
-            end_tin = datetime.utcfromtimestamp(end_seconds)
+            start_tin = False
+            end_tin = False
+            if i.get('start_date'):
+                start_seconds = (i.get('start_date') - 25569) * 86400.0
+                start_tin = datetime.utcfromtimestamp(start_seconds)
+            if i.get('end_date'):
+                end_seconds = (i.get('end_date') - 25569) * 86400.0
+                end_tin = datetime.utcfromtimestamp(end_seconds)
+            # date_from = datetime.strptime(i.get('start_date'))
+            # print(date_from)
             vals = {
                 'name': i.get('task_name'),
                 'task_code': i.get('task_code'),
