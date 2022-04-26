@@ -1,0 +1,36 @@
+<odoo>
+
+    <record id="view_project_project_form_inherit" model="ir.ui.view">
+        <field name="name">project.project.form.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="create_data"
+                     type="object"
+                     string="Import Tasks"
+                     class="oe_highlight"/>
+            </xpath>
+            <xpath expr="//div[@name='options_active']" position="after">
+                <group>
+                    <group>
+                        <field name="file_upload"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_project_task_form_inherit" model="ir.ui.view">
+        <field name="name">project.task.form.inherit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="date_start"/>
+                <field name="task_code"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
