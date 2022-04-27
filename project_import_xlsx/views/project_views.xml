@@ -5,19 +5,29 @@
         <field name="model">project.project</field>
         <field name="inherit_id" ref="project.edit_project"/>
         <field name="arch" type="xml">
-            <xpath expr="//header" position="inside">
-                <button name="create_data"
-                     type="object"
-                     string="Import Tasks"
-                     class="oe_highlight"/>
+<!--            <xpath expr="//header" position="inside">-->
+<!--                <button name="create_data"-->
+<!--                     type="object"-->
+<!--                     string="Import Tasks"-->
+<!--                     class="oe_highlight"/>-->
+<!--            </xpath>-->
+
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button class="oe_stat_button"
+                        name="%(project_import_xlsx.action_task_import_wizard)d"
+                        string="Primavera P6"
+                        type="action"
+                        icon="fa-bars"
+                />
             </xpath>
-            <xpath expr="//div[@name='options_active']" position="after">
-                <group>
-                    <group>
-                        <field name="file_upload"/>
-                    </group>
-                </group>
-            </xpath>
+
+<!--            <xpath expr="//div[@name='options_active']" position="after">-->
+<!--                <group>-->
+<!--                    <group>-->
+<!--                        <field name="file_upload"/>-->
+<!--                    </group>-->
+<!--                </group>-->
+<!--            </xpath>-->
         </field>
     </record>
 

@@ -23,6 +23,8 @@
 
     # always loaded
     'data': [
+        'security/ir.model.access.csv',
+        'wizards/task_import_wizard_views.xml',
         'views/project_views.xml',
     ],
 

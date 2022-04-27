@@ -12,7 +12,7 @@ import base64
 class ProjectsXLSX(models.Model):
     _inherit = 'project.project'
 
-    file_upload = fields.Binary(string='Upload File')
+    # file_upload = fields.Binary(string='Upload File')
 
     def create_data(self):
         wb = xlrd.open_workbook(file_contents=base64.decodestring(self.file_upload))
