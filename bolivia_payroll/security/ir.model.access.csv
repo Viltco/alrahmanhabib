@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bolivia_payroll_bolivia_payroll,bolivia_payroll.bolivia_payroll,model_bolivia_payroll_bolivia_payroll,base.group_user,1,1,1,1

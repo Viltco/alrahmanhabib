@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record id="add_allowances_and_deductions" model="ir.ui.view">
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='personal_information']" position="inside">
+                    <group>
+                        <field name="number"/>
+                        <field name="paid_hours"/>
+                        <field name="paid_days"/>
+                    </group>
+                    <group>
+                        <group name="allownaces" string="Allownces" >
+                            <field name="pension"/>
+                            <field name="production_bonus"/>
+                            <field name="border"/>
+                            <field name="normal_saturday"/>
+                            <field name="sunday"/>
+                            <field name="other_payment"/>
+                        </group>
+
+                        <group name="deductions" string="Deductions">
+                            <field name="yes_or_no"/>
+                            <field name="taxes"/>
+                            <field name="other_discounts"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

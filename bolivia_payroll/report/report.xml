@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <report
+            id="report_xlsx_details"
+            model="hr.payslip.run"
+            string="Bolivia Payroll Report"
+            report_type="xlsx"
+            name="bolivia_payroll.report_id_xlsx"
+            file="bolivia_payroll.report_id_xlsx"
+    />
+
+</odoo>
